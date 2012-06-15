@@ -243,7 +243,6 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/s_cbrt.c \
     upstream-freebsd/lib/msun/src/s_ceil.c \
     upstream-freebsd/lib/msun/src/s_ceilf.c \
-    upstream-freebsd/lib/msun/src/s_cos.c \
     upstream-freebsd/lib/msun/src/s_floorf.c \
     upstream-freebsd/lib/msun/src/s_expm1.c \
     upstream-freebsd/lib/msun/src/s_llrint.c \
@@ -251,7 +250,6 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/s_log1p.c \
     upstream-freebsd/lib/msun/src/s_rint.c \
     upstream-freebsd/lib/msun/src/s_rintf.c \
-    upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanh.c \
     upstream-freebsd/lib/msun/src/s_trunc.c \
@@ -286,9 +284,13 @@ LOCAL_SRC_FILES_arm += \
     arm/floor.S \
     arm/lrint.S \
     arm/fabsf.S \
-    arm/fma.S
-
+    arm/fma.S \
+    arm/sin.S \
+    arm/cos.S \
+    arm/pow.S
 endif
+
+LOCAL_CFLAGS_arm := -fno-if-conversion
 
 # -----------------------------------------------------------------------------
 # arm64
