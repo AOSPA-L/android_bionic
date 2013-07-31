@@ -290,6 +290,9 @@ LOCAL_SRC_FILES_arm += \
     arm/s_fabsf.S \
     arm/s_fma.S \
     arm/smaf.S
+    arm/k_log2.S \
+    arm/k_pow2.S \
+    arm/e_fast_pow.S
 
 endif
 
