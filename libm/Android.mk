@@ -292,7 +292,9 @@ LOCAL_SRC_FILES_arm += \
     arm/smaf.S
     arm/k_log2.S \
     arm/k_pow2.S \
-    arm/e_fast_pow.S
+    arm/e_fast_pow.S \
+    arm/s_fast_sin.S \
+    arm/s_fast_cos.S
 
 endif
 

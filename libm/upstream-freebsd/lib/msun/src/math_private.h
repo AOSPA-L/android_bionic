@@ -683,6 +683,10 @@ irintl(long double x)
 #if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
 #define	__ieee754_pow	pow
 #endif
+#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#define	__ieee754_sin	sin
+#define	__ieee754_cos	cos
+#endif
 #define	__ieee754_lgamma lgamma
 #define	__ieee754_gamma	gamma
 #define	__ieee754_lgamma_r lgamma_r
