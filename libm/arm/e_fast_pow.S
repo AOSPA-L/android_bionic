@@ -32,6 +32,10 @@
 #define iylog2xd	d22
 #define t0		d23
 
+	.fpu	vfpv4
+#define MLAF64		vfma.f64
+#define MLSF64		vfms.f64
+
 ENTRY(pow)	/* x in r0, r1. y in r2, r3 */
 
 	push		{r4, r5, lr}
@@ -94,7 +98,7 @@ ENTRY(pow)	/* x in r0, r1. y in r2, r3 */
 	vmov		exp, r5
 	vcvt.f64.s32	expd, exp
 	vmul.f64        ylog2x, ret, y
-	vmla.f64        ylog2x, expd, y
+	MLAF64          ylog2x, expd, y
 
 	/* iylog2x = (int)ylog2x; */
 	vcvt.s32.f64	iylog2x, ylog2x
