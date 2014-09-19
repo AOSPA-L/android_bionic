@@ -94,7 +94,7 @@ ivln2_h  =  1.44269502162933349609e+00, /* 0x3FF71547, 0x60000000 =24b 1/ln2*/
 ivln2_l  =  1.92596299112661746887e-08; /* 0x3E54AE0B, 0xF85DDF44 =1/ln2 tail*/
 
 double
-#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#if defined(ARCH_ARM_HAVE_NEON)
 __full_ieee754_pow(double x, double y)
 #else
 __ieee754_pow(double x, double y)
@@ -110,7 +110,7 @@ __ieee754_pow(double x, double y)
 	EXTRACT_WORDS(hy,ly,y);
 	ix = hx&0x7fffffff;  iy = hy&0x7fffffff;
 
-#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#if defined(ARCH_ARM_HAVE_NEON)
 
     if (ly == 0) {
         if (hy == ly) {

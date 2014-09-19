@@ -307,6 +307,7 @@ LOCAL_SRC_FILES_arm64 += \
     arm64/fabsf.S \
     arm64/fmax.S \
     arm64/fmin.S \
+    arm64/pow.S \
     upstream-freebsd/lib/msun/src/e_acos.c \
     upstream-freebsd/lib/msun/src/e_asin.c \
     upstream-freebsd/lib/msun/src/e_atan2.c \
