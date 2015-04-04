@@ -108,7 +108,6 @@ LOCAL_SRC_FILES := \
     upstream-freebsd/lib/msun/src/s_exp2f.c \
     upstream-freebsd/lib/msun/src/s_expm1f.c \
     upstream-freebsd/lib/msun/src/s_fabs.c \
-    upstream-freebsd/lib/msun/src/s_fabsf.c \
     upstream-freebsd/lib/msun/src/s_fdim.c \
     upstream-freebsd/lib/msun/src/s_finite.c \
     upstream-freebsd/lib/msun/src/s_finitef.c \
@@ -249,15 +248,11 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/s_ceil.c \
     upstream-freebsd/lib/msun/src/s_ceilf.c \
     upstream-freebsd/lib/msun/src/s_cos.c \
-    upstream-freebsd/lib/msun/src/s_fma.c \
-    upstream-freebsd/lib/msun/src/s_fmaf.c \
     upstream-freebsd/lib/msun/src/s_floorf.c \
     upstream-freebsd/lib/msun/src/s_expm1.c \
     upstream-freebsd/lib/msun/src/s_llrint.c \
     upstream-freebsd/lib/msun/src/s_llrintf.c \
     upstream-freebsd/lib/msun/src/s_log1p.c \
-    upstream-freebsd/lib/msun/src/s_lrint.c \
-    upstream-freebsd/lib/msun/src/s_lrintf.c \
     upstream-freebsd/lib/msun/src/s_rint.c \
     upstream-freebsd/lib/msun/src/s_rintf.c \
     upstream-freebsd/lib/msun/src/s_sin.c \
@@ -279,12 +274,22 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/e_sqrt.c \
     upstream-freebsd/lib/msun/src/e_sqrtf.c \
     upstream-freebsd/lib/msun/src/s_floor.c \
+    upstream-freebsd/lib/msun/src/s_fma.c \
+    upstream-freebsd/lib/msun/src/s_fmaf.c \
+    upstream-freebsd/lib/msun/src/s_lrint.c \
+    upstream-freebsd/lib/msun/src/s_lrintf.c \
+    upstream-freebsd/lib/msun/src/s_fabsf.c \
 
 else
 LOCAL_SRC_FILES_arm += \
     arm/e_sqrt.S \
     arm/e_sqrtf.S \
     arm/s_floor.S \
+    arm/lrint.S \
+    arm/lrintf.S \
+    arm/s_fabsf.S \
+    arm/s_fma.S \
+    arm/smaf.S
 
 endif
 
@@ -318,6 +323,7 @@ LOCAL_SRC_FILES_arm64 += \
     upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanh.c \
+    upstream-freebsd/lib/msun/src/s_fabsf.c \
 
 # -----------------------------------------------------------------------------
 # mips
@@ -358,6 +364,7 @@ libm_mips_arch_files := \
     upstream-freebsd/lib/msun/src/s_tanh.c \
     upstream-freebsd/lib/msun/src/s_trunc.c \
     upstream-freebsd/lib/msun/src/s_truncf.c \
+    upstream-freebsd/lib/msun/src/s_fabsf.c \
 
 LOCAL_SRC_FILES_mips += $(libm_mips_arch_files)
 LOCAL_SRC_FILES_mips64 += $(libm_mips_arch_files)
@@ -375,6 +382,7 @@ LOCAL_SRC_FILES_x86 += \
     upstream-freebsd/lib/msun/src/s_lrintf.c \
     upstream-freebsd/lib/msun/src/s_rint.c \
     upstream-freebsd/lib/msun/src/s_rintf.c \
+    upstream-freebsd/lib/msun/src/s_fabsf.c \
     x86/sqrt.S \
     x86/sqrtf.S \
     x86/e_acos.S \
@@ -432,6 +440,7 @@ LOCAL_SRC_FILES_x86_64 += \
     upstream-freebsd/lib/msun/src/s_lrintf.c \
     upstream-freebsd/lib/msun/src/s_rint.c \
     upstream-freebsd/lib/msun/src/s_rintf.c \
+    upstream-freebsd/lib/msun/src/s_fabsf.c \
     x86_64/sqrt.S \
     x86_64/sqrtf.S \
     x86_64/e_acos.S \
