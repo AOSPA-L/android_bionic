@@ -679,11 +679,11 @@ irintl(long double x)
 #define	__ieee754_atan2	atan2
 #define	__ieee754_cosh	cosh
 #define	__ieee754_fmod	fmod
-#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#if !defined(ARM_OPT)
 #define	__ieee754_pow	pow
 #define	__ieee754_exp	exp
 #endif
-#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#if !defined(ARM_OPT)
 #define	__ieee754_sin	sin
 #define	__ieee754_cos	cos
 #endif

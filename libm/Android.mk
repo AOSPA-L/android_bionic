@@ -299,6 +299,8 @@ LOCAL_SRC_FILES_arm += \
     arm/s_sin_fast.S \
     arm/s_cos_fast.S
 
+LOCAL_CFLAGS_arm += -DARM_OPT
+
 endif
 
 # -----------------------------------------------------------------------------
