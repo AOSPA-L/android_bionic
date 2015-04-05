@@ -59,7 +59,7 @@ S6  =  1.58969099521155010221e-10; /* 0x3DE5D93A, 0x5ACFD57C */
 double
 __kernel_sin(double x, double y, int iy)
 {
-#if defined(ARCH_ARM_HAVE_NEON) && !defined(__LP64__)
+#if defined(ARM_OPT)
 	double z,zz,r,v;
 
 	z	=  x*x;

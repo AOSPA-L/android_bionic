@@ -288,9 +288,10 @@ LOCAL_SRC_FILES_arm += \
     arm/sin.S \
     arm/cos.S \
     arm/pow.S
-endif
 
-LOCAL_CFLAGS_arm := -fno-if-conversion
+LOCAL_CFLAGS_arm := -fno-if-conversion -DARM_OPT
+
+endif
 
 # -----------------------------------------------------------------------------
 # arm64
@@ -326,6 +327,8 @@ LOCAL_SRC_FILES_arm64 += \
     upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanh.c \
+
+LOCAL_CFLAGS_arm64 := -fno-if-conversion -DARM64_OPT
 
 # -----------------------------------------------------------------------------
 # mips
