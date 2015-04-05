@@ -38,4 +38,10 @@ ENTRY(lrint)
 	mov		pc, lr
 END(lrint)
 
+.weak lrintf, _lrintf
 
+ENTRY(lrintf)
+        vcvt.s32.f32    s0, s0
+        vmov            r0, s0
+        mov             pc, lr
+END(lrintf)

@@ -282,14 +282,11 @@ LOCAL_SRC_FILES_arm += \
 
 else
 LOCAL_SRC_FILES_arm += \
-    arm/e_sqrt.S \
-    arm/e_sqrtf.S \
-    arm/s_floor.S \
+    arm/sqrt.S \
+    arm/floor.S \
     arm/lrint.S \
-    arm/lrintf.S \
-    arm/s_fabsf.S \
-    arm/s_fma.S \
-    arm/smaf.S
+    arm/fabsf.S \
+    arm/fma.S \
     arm/k_log2.S \
     arm/k_pow2.S \
     arm/e_fast_pow.S \
