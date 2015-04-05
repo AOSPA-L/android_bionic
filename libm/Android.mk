@@ -54,7 +54,6 @@ LOCAL_SRC_FILES := \
     upstream-freebsd/lib/msun/src/e_powf.c \
     upstream-freebsd/lib/msun/src/e_remainder.c \
     upstream-freebsd/lib/msun/src/e_remainderf.c \
-    upstream-freebsd/lib/msun/src/e_rem_pio2.c \
     upstream-freebsd/lib/msun/src/e_rem_pio2f.c \
     upstream-freebsd/lib/msun/src/e_scalb.c \
     upstream-freebsd/lib/msun/src/e_scalbf.c \
@@ -64,7 +63,6 @@ LOCAL_SRC_FILES := \
     upstream-freebsd/lib/msun/src/k_cosf.c \
     upstream-freebsd/lib/msun/src/k_exp.c \
     upstream-freebsd/lib/msun/src/k_expf.c \
-    upstream-freebsd/lib/msun/src/k_rem_pio2.c \
     upstream-freebsd/lib/msun/src/k_sin.c \
     upstream-freebsd/lib/msun/src/k_sinf.c \
     upstream-freebsd/lib/msun/src/k_tan.c \
@@ -233,17 +231,12 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/e_asin.c \
     upstream-freebsd/lib/msun/src/e_atan2.c \
     upstream-freebsd/lib/msun/src/e_cosh.c \
-    upstream-freebsd/lib/msun/src/e_exp.c \
     upstream-freebsd/lib/msun/src/e_hypot.c \
-    upstream-freebsd/lib/msun/src/e_log.c \
     upstream-freebsd/lib/msun/src/e_log10.c \
-    upstream-freebsd/lib/msun/src/e_pow.c \
     upstream-freebsd/lib/msun/src/e_sinh.c \
-    upstream-freebsd/lib/msun/src/s_atan.c \
     upstream-freebsd/lib/msun/src/s_cbrt.c \
     upstream-freebsd/lib/msun/src/s_ceil.c \
     upstream-freebsd/lib/msun/src/s_ceilf.c \
-    upstream-freebsd/lib/msun/src/s_cos.c \
     upstream-freebsd/lib/msun/src/s_floorf.c \
     upstream-freebsd/lib/msun/src/s_expm1.c \
     upstream-freebsd/lib/msun/src/s_llrint.c \
@@ -251,7 +244,6 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/s_log1p.c \
     upstream-freebsd/lib/msun/src/s_rint.c \
     upstream-freebsd/lib/msun/src/s_rintf.c \
-    upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanh.c \
     upstream-freebsd/lib/msun/src/s_trunc.c \
@@ -286,7 +278,18 @@ LOCAL_SRC_FILES_arm += \
     arm/floor.S \
     arm/lrint.S \
     arm/fabsf.S \
-    arm/fma.S
+    arm/fma.S \
+    arm/e_exp.s \
+    arm/e_log.s \
+    arm/e_pow.s \
+    arm/e_pow_kernel.s \
+    arm/e_rem_pio2.s \
+    arm/k_rem_pio2.s \
+    arm/s_atan.s \
+    arm/s_cos.s \
+    arm/s_cos_kernel.s \
+    arm/s_sin.s \
+    arm/s_sin_kernel.s
 
 endif
 
@@ -305,6 +308,17 @@ LOCAL_SRC_FILES_arm64 += \
     arm64/fabsf.S \
     arm64/fmax.S \
     arm64/fmin.S \
+    arm64/e_exp.s \
+    arm64/e_log.s \
+    arm64/e_pow.s \
+    arm64/e_pow_kernel.s \
+    arm64/e_rem_pio2.s \
+    arm64/k_rem_pio2.s \
+    arm64/s_atan.s \
+    arm64/s_cos.s \
+    arm64/s_cos_kernel.s \
+    arm64/s_sin.s \
+    arm64/s_sin_kernel.s \
     upstream-freebsd/lib/msun/src/e_acos.c \
     upstream-freebsd/lib/msun/src/e_asin.c \
     upstream-freebsd/lib/msun/src/e_atan2.c \
@@ -368,6 +382,8 @@ libm_mips_arch_files := \
     upstream-freebsd/lib/msun/src/s_fmaxf.c \
     upstream-freebsd/lib/msun/src/s_fmin.c \
     upstream-freebsd/lib/msun/src/s_fminf.c \
+    upstream-freebsd/lib/msun/src/e_rem_pio2.c \
+    upstream-freebsd/lib/msun/src/k_rem_pio2.c \
 
 LOCAL_SRC_FILES_mips += $(libm_mips_arch_files)
 LOCAL_SRC_FILES_mips64 += $(libm_mips_arch_files)
@@ -390,6 +406,8 @@ LOCAL_SRC_FILES_x86 += \
     upstream-freebsd/lib/msun/src/s_fmaxf.c \
     upstream-freebsd/lib/msun/src/s_fmin.c \
     upstream-freebsd/lib/msun/src/s_fminf.c \
+    upstream-freebsd/lib/msun/src/e_rem_pio2.c \
+    upstream-freebsd/lib/msun/src/k_rem_pio2.c \
     x86/sqrt.S \
     x86/sqrtf.S \
     x86/e_acos.S \
@@ -452,6 +470,8 @@ LOCAL_SRC_FILES_x86_64 += \
     upstream-freebsd/lib/msun/src/s_fmaxf.c \
     upstream-freebsd/lib/msun/src/s_fmin.c \
     upstream-freebsd/lib/msun/src/s_fminf.c \
+    upstream-freebsd/lib/msun/src/e_rem_pio2.c \
+    upstream-freebsd/lib/msun/src/k_rem_pio2.c \
     x86_64/sqrt.S \
     x86_64/sqrtf.S \
     x86_64/e_acos.S \
