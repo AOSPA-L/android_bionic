@@ -29,12 +29,19 @@
 
 #include <private/bionic_asm.h>
 
+.weak fmal, _fmal
+.weak fma, _fma
+
+ENTRY(fma)
+	vmla.f64	d2, d0, d1
+	vmov.f64	d0, d2
+	bx		lr
+END(fma)
+
 .weak fmaf, _fmaf
 
 ENTRY(fmaf)
-	vmla.f32	s2, s0, s1
-	vmov.f32	s0, s2
-	bx		lr
+        vmla.f32        s2, s0, s1
+        vmov.f32        s0, s2
+        bx              lr
 END(fmaf)
-
-
