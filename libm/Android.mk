@@ -288,8 +288,6 @@ LOCAL_SRC_FILES_arm += \
     arm/k_log2.S \
     arm/k_pow2.S \
     arm/e_fast_pow.S \
-    arm/e_fast_exp.S \
-    arm/k_exp.S \
     arm/e_rem_pio2_fast.S \
     arm/e_rem_pio2_large.c \
     arm/k_sin_fast.S \

@@ -681,8 +681,8 @@ irintl(long double x)
 #define	__ieee754_fmod	fmod
 #if !defined(ARM_OPT)
 #define	__ieee754_pow	pow
-#define	__ieee754_exp	exp
 #endif
+#define __ieee754_exp   exp
 #if !defined(ARM_OPT)
 #define	__ieee754_sin	sin
 #define	__ieee754_cos	cos
