@@ -274,33 +274,36 @@ LOCAL_SRC_FILES_arm += \
 # arm64
 # -----------------------------------------------------------------------------
 LOCAL_SRC_FILES_arm64 += \
+    arm64/atan.S \
     arm64/ceil.S \
+    arm64/cos.S \
+    arm64/cos_kernel.S \
+    arm64/exp.S \
     arm64/fabs.S \
     arm64/fenv.c \
     arm64/fma.S \
     arm64/floor.S \
+    arm64/log.S \
     arm64/lrint.S \
+    arm64/pow.S \
+    arm64/pow_kernel.S \
+    arm64/rem_pio2.S \
+    arm64/rem_pio2_kernel.S \
     arm64/rint.S \
+    arm64/sin.S \
+    arm64/sin_kernel.S \
     arm64/sqrt.S \
     arm64/trunc.S \
     upstream-freebsd/lib/msun/src/e_acos.c \
     upstream-freebsd/lib/msun/src/e_asin.c \
     upstream-freebsd/lib/msun/src/e_atan2.c \
     upstream-freebsd/lib/msun/src/e_cosh.c \
-    upstream-freebsd/lib/msun/src/e_exp.c \
     upstream-freebsd/lib/msun/src/e_hypot.c \
-    upstream-freebsd/lib/msun/src/e_log.c \
     upstream-freebsd/lib/msun/src/e_log10.c \
-    upstream-freebsd/lib/msun/src/e_pow.c \
-    upstream-freebsd/lib/msun/src/e_rem_pio2.c \
     upstream-freebsd/lib/msun/src/e_sinh.c \
-    upstream-freebsd/lib/msun/src/k_rem_pio2.c \
-    upstream-freebsd/lib/msun/src/s_atan.c \
     upstream-freebsd/lib/msun/src/s_cbrt.c \
-    upstream-freebsd/lib/msun/src/s_cos.c \
     upstream-freebsd/lib/msun/src/s_expm1.c \
     upstream-freebsd/lib/msun/src/s_log1p.c \
-    upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanh.c \
 
